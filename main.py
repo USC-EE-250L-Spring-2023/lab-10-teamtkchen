@@ -12,7 +12,18 @@ def generate_data() -> List[int]:
     return np.random.randint(100, 10000, 1000).tolist()
 
 def process1(data: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """
+        TODO: Document this function. What does it do? What are the inputs and outputs?
+        This function returns a list of integers and takes in a list of integers
+        It puts a list of increasing prime numbers that it finds in the random
+
+        Args:
+            data: a list of ints
+
+        Returns:
+            List: array with a single int value
+    """
+
     def foo(x):
         """Find the next largest prime number."""
         while True:
@@ -22,9 +33,20 @@ def process1(data: List[int]) -> List[int]:
     return [foo(x) for x in data]
 
 def process2(data: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """
+        TODO: Document this function. What does it do? What are the inputs and outputs?
+
+        Args:
+            data: a list of ints
+
+        Returns:
+            List: array with a single int value
+    """
     def foo(x):
-        """Find the next largest prime number."""
+        """If you take the square root of a function and then raise it to the power of 2 
+        see if it's still the same number
+        could be different if the integer is trunctated
+        """
         while True:
             x += 1
             if int(np.sqrt(x)) ** 2 == x:
@@ -32,7 +54,19 @@ def process2(data: List[int]) -> List[int]:
     return [foo(x) for x in data]
 
 def final_process(data1: List[int], data2: List[int]) -> List[int]:
-    """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """
+        TODO: Document this function. What does it do? What are the inputs and outputs?
+            zip makes pairs of the same index. 
+            This function takes two lists of integers as input and returns a list with a single float value.
+            The returned value is the mean of the differences between corresponding elements in the input lists.
+        Args:
+            data1: a list of ints
+
+            data2: a list of ints
+
+        Returns:
+            List: array with a single int value
+    """
     return np.mean([x - y for x, y in zip(data1, data2)])
 
 offload_url = 'http://192.168.4.74:5000' # TODO: Change this to the IP address of your server
